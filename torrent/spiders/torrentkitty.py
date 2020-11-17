@@ -6,14 +6,14 @@ from urllib import parse
 class TorrentkittySpider(scrapy.Spider):
     name = 'torrentkitty'
     allowed_domains = ['torrentkitty.tv']
-    search_name = ""
+    search_name = "变形金刚"
     search_name = parse.quote(search_name)
     start_urls = ['https://www.torrentkitty.tv/search/{}'.format(search_name)]
 
     def __init__(self):
         option = webdriver.ChromeOptions()
         option.add_argument('--headless')
-        self.browser = webdriver.Chrome(executable_path="C:\software\chromedriver_win32\chromedriver.exe",
+        self.browser = webdriver.Chrome(executable_path="/Users/winters/software/chromedriver",
                                         chrome_options=option)
         super().__init__()
 
